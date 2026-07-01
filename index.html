@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Alex Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Star background canvas -->
+<canvas id="star-canvas"></canvas>
+
+<!-- ================================================================
+     NAVBAR
+================================================================ -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="nav-logo" id="nav-logo-text">Alex Dev</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="btn-admin" id="btn-open-admin">⚙ Admin</button></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ================================================================
+     HERO SECTION
+================================================================ -->
+<section class="hero section" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span id="hero-badge-text">Tersedia untuk Project Baru</span>
+        </div>
+        <h1 class="hero-name">
+          Halo, Saya<br>
+          <span class="highlight" id="hero-name-display">Alex Pratama</span>
+        </h1>
+        <p class="hero-role">
+          <span id="hero-role-display"></span><span class="typing-cursor"></span>
+        </p>
+        <p class="hero-desc" id="hero-desc-display">
+          Full-Stack Developer yang bersemangat membangun solusi digital modern, dari desain UI yang elegan hingga arsitektur backend yang andal.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">Lihat Project Saya</a>
+          <a href="#contact" class="btn-secondary">Hubungi Saya →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-value">3+</div>
+            <div class="stat-label">Tahun Exp.</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="projects-count">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Dedikasi</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-ring">
+          <div class="avatar-img" id="avatar-container">
+            <div class="avatar-placeholder-svg">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="38" r="22" fill="#06b6d4"/>
+                <ellipse cx="50" cy="90" rx="36" ry="22" fill="#06b6d4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     ABOUT SECTION
+================================================================ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">Tentang Saya</p>
+        <h2 class="section-title">Passion untuk<br>Teknologi & Desain</h2>
+        <p>Saya adalah seorang developer yang percaya bahwa kode yang baik bukan hanya yang berfungsi, tetapi juga yang indah dan mudah dipahami. Dengan pengalaman di berbagai stack teknologi, saya siap menghadapi tantangan apapun.</p>
+        <p>Ketika tidak sedang coding, saya senang belajar hal baru, berkontribusi ke open-source, dan mengeksplorasi desain UI yang inovatif.</p>
+        <div class="skills-list">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+      </div>
+      <div class="about-cards">
+        <div class="info-card">
+          <div class="info-card-icon">🎯</div>
+          <h4>Focus Area</h4>
+          <p>Web development full-stack, mobile apps, dan solusi berbasis cloud yang scalable.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🎓</div>
+          <h4>Pendidikan</h4>
+          <p>S1 Sistem Informasi — Universitas PGRI Madiun.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🌍</div>
+          <h4>Remote Ready</h4>
+          <p>Berpengalaman bekerja dalam tim yang tersebar, mengutamakan komunikasi yang jelas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     PROJECTS SECTION
+================================================================ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">Project Terbaru</h2>
+        <p class="section-subtitle">Koleksi karya yang mencerminkan kemampuan teknis dan kreativitas desain.</p>
+      </div>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- project cards rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ================================================================
+     CONTACT SECTION
+================================================================ -->
+<section class="section" id="contact">
+  <div class="container">
+    <p class="section-label">Kontak</p>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Mari Berkolaborasi!</h3>
+        <p>Punya ide proyek menarik atau ingin berdiskusi tentang peluang kerja sama? Saya selalu terbuka untuk percakapan baru.</p>
+        <div class="contact-links">
+          <div class="contact-link-item">
+            <span>📧</span> hello@alexdev.id
+          </div>
+          <div class="contact-link-item">
+            <span>💼</span> linkedin.com/in/alexpratama
+          </div>
+          <div class="contact-link-item">
+            <span>🐙</span> github.com/alexdev
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" class="form-control" placeholder="Masukkan nama Anda" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="email@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Pesan</label>
+          <textarea class="form-control" placeholder="Ceritakan project atau ide Anda..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Kirim Pesan ✉</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 <span id="footer-name">Alex Pratama</span>. Dibuat dengan ❤️ menggunakan HTML, CSS & JavaScript.</p>
+  </div>
+</footer>
+
+<!-- ================================================================
+     LOGIN MODAL
+================================================================ -->
+<div class="modal-overlay" id="login-overlay">
+  <div class="login-modal">
+    <div class="modal-logo">Admin Panel</div>
+    <p class="modal-sub">Masukkan password untuk mengakses dashboard.</p>
+    <div class="login-error" id="login-error">Password salah. Coba lagi.</div>
+    <div class="admin-form">
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" id="admin-password-input" placeholder="••••••••" />
+      </div>
+      <button class="btn-primary" onclick="handleAdminLogin()">Masuk →</button>
+      <button class="btn-secondary" onclick="closeLoginModal()">Batal</button>
+    </div>
+    <p style="margin-top:20px;font-size:12px;color:var(--text-muted);text-align:center;">
+      💡 Password default: <strong style="color:var(--accent-cyan)">admin</strong>
+    </p>
+  </div>
+</div>
+
+<!-- ================================================================
+     ADMIN DASHBOARD MODAL
+================================================================ -->
+<div class="modal-overlay" id="admin-overlay">
+  <div class="admin-modal">
+    <div class="admin-header">
+      <div>
+        <h2>Admin Dashboard <span class="admin-badge">● Online</span></h2>
+      </div>
+      <button class="btn-close" onclick="closeAdminModal()" aria-label="Tutup">✕</button>
+    </div>
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchTab('profile', this)">👤 Edit Profil</button>
+      <button class="admin-tab" onclick="switchTab('project', this)">➕ Tambah Project</button>
+      <button class="admin-tab" onclick="switchTab('manage', this)">🗂 Kelola Project</button>
+    </div>
+    <div class="admin-content">
+
+      <!-- TAB: Edit Profil -->
+      <div class="tab-panel active" id="tab-profile">
+        <div class="admin-notice" style="margin-bottom:24px;">
+          <strong>📝 Edit Profil</strong> — Perubahan akan langsung terlihat di halaman utama dan tersimpan otomatis.
+        </div>
+        <div class="admin-form" id="profile-form">
+          <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" class="form-control" id="input-name" placeholder="Nama Anda" />
+          </div>
+          <div class="form-group">
+            <label>Pekerjaan / Status</label>
+            <input type="text" class="form-control" id="input-role" placeholder="misal: Full-Stack Developer" />
+          </div>
+          <div class="form-group">
+            <label>Deskripsi Singkat</label>
+            <textarea class="form-control" id="input-desc" rows="3" placeholder="Ceritakan tentang diri Anda..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>URL Foto Profil (opsional)</label>
+            <input type="url" class="form-control" id="input-avatar" placeholder="https://example.com/foto.jpg" />
+          </div>
+          <button class="btn-primary" onclick="saveProfile()">💾 Simpan Profil</button>
+        </div>
+      </div>
+
+      <!-- TAB: Tambah Project -->
+      <div class="tab-panel" id="tab-project">
+        <div class="admin-notice" style="margin-bottom:24px;">
+          <strong>🚀 Tambah Project Baru</strong> — Project akan langsung muncul di section Portfolio.
+        </div>
+        <div class="admin-form">
+          <div class="form-group">
+            <label>Judul Project</label>
+            <input type="text" class="form-control" id="proj-title" placeholder="misal: E-Commerce Platform" />
+          </div>
+          <div class="form-group">
+            <label>Deskripsi Project</label>
+            <textarea class="form-control" id="proj-desc" rows="3" placeholder="Jelaskan project ini secara singkat..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>URL Gambar (opsional)</label>
+            <input type="url" class="form-control" id="proj-img" placeholder="https://example.com/screenshot.jpg" />
+          </div>
+          <div class="form-group">
+            <label>Link Project / GitHub</label>
+            <input type="url" class="form-control" id="proj-link" placeholder="https://github.com/..." />
+          </div>
+          <div class="form-group">
+            <label>Kategori</label>
+            <input type="text" class="form-control" id="proj-tag" placeholder="misal: Web App, Mobile, API" />
+          </div>
+          <button class="btn-primary" onclick="addProject()">➕ Tambahkan Project</button>
+        </div>
+      </div>
+
+      <!-- TAB: Kelola Project -->
+      <div class="tab-panel" id="tab-manage">
+        <div class="admin-notice" style="margin-bottom:24px;">
+          <strong>🗂 Kelola Project</strong> — Hapus project yang sudah tidak relevan.
+        </div>
+        <div id="manage-list"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<!-- ================================================================
+     JAVASCRIPT
+================================================================ -->
+<script src="js/script.js"></script>
+</body>
+</html>
